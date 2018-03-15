@@ -7,6 +7,10 @@
 
 <body>
 
+  <div id="text-div">
+    <h5>hold down your mouse and move it around to do some drawin'</h5>
+  </div>
+
   <canvas id="draw" width="800" height="800"></canvas>
 
 <script>
@@ -16,7 +20,7 @@
   const ctx = canvas.getContext('2d');
 
   canvas.width = window.innerWidth;
-  canvas.heigh = window.innerHeight;
+  canvas.height = window.innerHeight;
 
   ctx.strokeStyle = '#BADA55';
   ctx.lineJoin = 'round';
@@ -53,12 +57,12 @@
     }
   }
 
-  canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     lastX = e.offsetX;
     lastY = e.offsetY;
   });
+  canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
@@ -67,6 +71,14 @@
 <style>
   html, body {
     margin:0;
+  }
+  #text-div {
+    width: 33%;
+    z-index: -500;
+  }
+  h5 {
+    padding-left: 20px;
+    color: rgb(100, 100, 100);
   }
 </style>
 
