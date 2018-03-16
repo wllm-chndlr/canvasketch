@@ -7,4 +7,4 @@
 ##### Made in 2018 with JS, CSS, HTML
 ##### Created as part of the JavaScript30 coding challenge
 
-![app screenshot](images/screenshot.png)
+![app screenshot](screenshot.png)
